@@ -1,7 +1,7 @@
 This is an ecommerce app build with NextJS
 
 
-The libraries installed in this app include:
+The external libraries installed in this app include:
 - axios - to make requests
 - bootstrap - for responsive styling
 
