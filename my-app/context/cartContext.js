@@ -1,5 +1,5 @@
 // this context is for handling cart logic
-import { createContext, useState, useContext } from 'react';
+import { createContext, useState, useContext } from "react";
 
 const CartContext = createContext();
 
@@ -8,12 +8,10 @@ export const CartProvider = ({ children }) => {
 
   const addToCart = (product) => {
     setCart((prevCart) => [...prevCart, product]);
-    
   };
 
   const removeFromCart = (product) => {
     setCart((prevCart) => prevCart.filter((item) => item.id !== product.id));
-    
   };
 
   return (

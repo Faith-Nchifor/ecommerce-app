@@ -1,16 +1,15 @@
 //this page displays the cart
 import { useCart } from "@/context/cartContext";
 import { useEffect } from "react";
-import styles from '@/styles/Home.module.css'
+import styles from "@/styles/Home.module.css";
 import Image from "next/image";
-import withAuth from '../components/withAuth';
+import withAuth from "../components/withAuth";
 
 const Cart = () => {
   const { cart, removeFromCart } = useCart();
   useEffect(() => {
-    console.log('cart:', cart);
-
-  }, [])
+    console.log("cart:", cart);
+  }, []);
   return (
     <main className={styles.main}>
       <h1>Your Cart</h1>
@@ -19,9 +18,13 @@ const Cart = () => {
       ) : (
         <>
           {cart.map((item) => (
-
             <div className={styles.card} key={item.id}>
-              <Image src={item.images[0]} width={100} height={100} alt={item.title} />
+              <Image
+                src={item.images[0]}
+                width={100}
+                height={100}
+                alt={item.title}
+              />
               <p>{item.title}</p>
               <p>Price: ${item.price}</p>
               <button onClick={() => removeFromCart(item)}>Remove</button>
@@ -35,4 +38,4 @@ const Cart = () => {
 
 // export default withAuth(Cart);
 
-export default Cart
+export default Cart;
